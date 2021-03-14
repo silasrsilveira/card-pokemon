@@ -1,0 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
+
+
+export default function App() {
+
+ const [nomes, setNomes] = useState([]);
+
+  useEffect(() => {
+
+    fetchNomesAsync()
+
+  }, []);
+
+  const fetchNomesAsync = async () => {
+    try {
+      const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${{ num }}`)
+      const result2 = await axios.get('https://pokeres.bastionbot.org/images/pokemon/1.png')
+      console.log(result);
+      
+    } catch (e) {
+      console.log(e);
+    }
+
+  }
+
+
+
+
+  return (
+    <div>
+      <h1>s</h1>
+    </div>
+  );
+}
+
+ // const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+// const getPokemonUrl = id => `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
